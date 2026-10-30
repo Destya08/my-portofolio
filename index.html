@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f9f7f1" />
+  <title>Destya Nikmatu Maula Saputri | IT Portfolio</title>
+  <style>
+    :root {
+      --bg: #f9f7f1;           /* cream lembut */
+      --white: #ffffff;
+      --blue-light: #7ea9e1;   /* biru muda */
+      --blue-dark: #5a78b2;    /* biru gelap */
+      --gray-dark: #4a4a4a;    /* abu gelap */
+      --gray-medium: #7a7a7a;  /* abu sedang */
+      --gray-light: #dcd7d3;   /* abu muda */
+      --shadow: 0 14px 36px rgba(125, 135, 150, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--gray-dark);
+      background: var(--bg);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: var(--white);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--gray-light);
+      padding: 16px 8%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .logo {
+      color: var(--blue-dark);
+      font-weight: 700;
+      font-size: 18px;
+      text-decoration: none;
+      user-select: none;
+    }
+
+    .logo span {
+      color: var(--blue-light);
+    }
+
+    nav {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+      flex: 1 1 auto;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--gray-medium);
+      font-size: 14px;
+      padding: 7px 12px;
+      border-radius: 20px;
+      transition: 0.2s ease;
+      white-space: nowrap;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      color: var(--blue-dark);
+      background: #e6ecf9;
+      outline: none;
+    }
+
+    section {
+      padding: 72px 8%;
+      scroll-margin-top: 85px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h1, h2, h3 {
+      word-break: break-word;
+    }
+
+    .hero {
+      min-height: 78vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      max-width: 690px;
+      flex: 1 1 340px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--blue-dark);
+      background: #e6ecf9;
+      border-radius: 30px;
+      padding: 7px 13px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      user-select: none;
+    }
+
+    h1 {
+      margin: 20px 0 15px;
+      font-size: clamp(42px, 7vw, 72px);
+      line-height: 1.08;
+      letter-spacing: -1.5px;
+      color: var(--gray-dark);
+    }
+
+    h1 span {
+      color: var(--blue-light);
+    }
+
+    p {
+      margin: 12px 0;
+      color: var(--gray-medium);
+      font-size: 16px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .button {
+      display: inline-block;
+      text-decoration: none;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--blue-light), var(--blue-dark));
+      padding: 11px 20px;
+      border-radius: 14px;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 7px 16px rgba(126, 169, 225, 0.4);
+      transition: background 0.3s ease, transform 0.2s ease;
+      user-select: none;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+      transform: translateY(-2px);
+      outline: none;
+    }
+
+    .button.secondary {
+      color: var(--blue-dark);
+      background: var(--white);
+      border: 1px solid var(--blue-light);
+      box-shadow: none;
+    }
+
+    .button.secondary:hover,
+    .button.secondary:focus-visible {
+      background: #e6ecf9;
+      outline: none;
+    }
+
+    .hero-card {
+      position: relative;
+      flex: 0 0 290px;
+      padding: 34px 25px;
+      text-align: center;
+      background: var(--white);
+      border: 1px solid var(--gray-light);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      user-select: none;
+    }
+
+    .hero-card::before {
+      content: "✦";
+      position: absolute;
+      top: -22px;
+      right: 24px;
+      font-size: 34px;
+      color: var(--blue-light);
+    }
+
+    .avatar {
+      width: 112px;
+      height: 112px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px solid var(--white);
+      box-shadow: 0 8px 20px rgba(126, 169, 225, 0.3);
+      object-fit: cover;
+    }
+
+    .hero-card h3 {
+      color: var(--blue-dark);
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+
+    .hero-card p {
+      font-size: 14px;
+      color: var(--gray-medium);
+    }
+
+    .tag.pink {
+      background: #d4e2fc;
+      border-color: var(--blue-light);
+      color: var(--blue-dark);
+    }
+
+    h2.section-title {
+      font-size: clamp(28px, 4vw, 36px);
+      margin-bottom: 18px;
+      color: var(--gray-dark);
+    }
+
+    h2.section-title span {
+      color: var(--blue-light);
+    }
+
+    .about,
+    .contact {
+      background: var(--white);
+      padding: 28px;
+      border-radius: 22px;
+      border: 1px solid var(--gray-light);
+      box-shadow: var(--shadow);
+      max-width: 760px;
+      margin-top: 12px;
+    }
+
+    .tags {
+      margin-top: 16px;
+    }
+
+    .tag {
+      display: inline-block;
+      margin: 5px 6px 0 0;
+      padding: 6px 12px;
+      color: var(--blue-dark);
+      background: #e6ecf9;
+      border: 1px solid var(--blue-light);
+      border-radius: 20px;
+      font-weight: 700;
+      font-size: 12px;
+      user-select: none;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 18px;
+      margin-top: 25px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .card {
+      background: var(--white);
+      padding: 24px;
+      border-radius: 14px;
+      border-top: 4px solid transparent;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      user-select: none;
+    }
+
+    .card:hover,
+    .card:focus-within {
+      transform: translateY(-4px);
+      box-shadow: 0 18px 38px rgba(126, 169, 225, 0.22);
+      outline: none;
+    }
+
+    .card-icon {
+      display: inline-grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      margin-bottom: 10px;
+      border-radius: 14px;
+      font-size: 21px;
+      background: transparent;
+      color: var(--blue-light);
+      user-select: none;
+    }
+
+    /* Skill cards: border-top color and background */
+
+    .skills .card:nth-child(1) {
+      border-top-color: #7ea9e1;
+      background: #e8f0fe;
+    }
+
+    .skills .card:nth-child(2) {
+      border-top-color: #b0b0b0;
+      background: #f7f7f7;
+    }
+
+    .skills .card:nth-child(3) {
+      border-top-color: #f7ecd9;
+      background: #fffaf0;
+    }
+
+    .skills .card:nth-child(4) {
+      border-top-color: #a3afc3;
+      background: #e6ebf5;
+    }
+
+    .skills .card:nth-child(5) {
+      border-top-color: #555a66;
+      background: #d8dadd;
+    }
+
+    .skills .card:nth-child(6) {
+      border-top-color: #a9cfe7;
+      background: #f0f6fc;
+    }
+
+    /* Projects styling */
+
+    #projects .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 25px;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #projects .card {
+      background: var(--white);
+      border: 1px solid var(--gray-light);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 24px;
+      user-select: none;
+    }
+
+    #projects .card-icon {
+      font-size: 28px;
+      margin-bottom: 12px;
+      color: var(--blue-light);
+      user-select: none;
+    }
+
+    #projects h3 {
+      margin-bottom: 10px;
+      color: var(--blue-dark);
+      font-size: 20px;
+    }
+
+    #projects p {
+      margin-bottom: 10px;
+      color: var(--gray-medium);
+      font-size: 15px;
+      line-height: 1.4;
+    }
+
+    #projects strong {
+      color: var(--blue-dark);
+      display: block;
+      margin-top: 10px;
+      margin-bottom: 6px;
+      font-weight: 700;
+      font-size: 15px;
+      user-select: none;
+    }
+
+    #projects ul {
+      padding-left: 20px;
+      margin-bottom: 10px;
+      color: var(--gray-medium);
+      font-size: 14px;
+      list-style-type: disc;
+      user-select: none;
+    }
+
+    #projects ul li {
+      margin-bottom: 4px;
+    }
+
+    .project-gallery {
+      margin: 15px 0 20px;
+    }
+
+    .project-image {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      display: block;
+    }
+
+    /* Project #hover effects */
+    #projects .card:hover,
+    #projects .card:focus-within {
+      box-shadow: 0 18px 38px rgba(126, 169, 225, 0.22);
+      transform: translateY(-4px);
+      outline: none;
+    }
+
+    /* Contact section buttons */
+    #contact .buttons a.button {
+      margin-bottom: 10px;
+    }
+
+    /* Footer */
+    footer {
+      padding: 26px 8%;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.55);
+      border-top: 1px solid var(--gray-light);
+      font-size: 13px;
+      color: var(--gray-medium);
+      user-select: none;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 760px) {
+      header {
+        flex-direction: column;
+        padding: 14px 5%;
+        gap: 10px;
+      }
+
+      nav {
+        justify-content: center;
+      }
+
+      nav a {
+        padding: 6px 9px;
+        font-size: 13px;
+      }
+
+      section {
+        padding: 55px 6%;
+      }
+
+      .hero {
+        flex-direction: column;
+        gap: 38px;
+        min-height: auto;
+      }
+
+      .hero-card {
+        width: min(100%, 360px);
+        align-self: center;
+        flex-basis: auto;
+      }
+
+      .skills,
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .about,
+      .contact {
+        padding: 23px;
+        max-width: 100%;
+      }
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="logo" href="#home">DESTYA'S PORTOFOLIO<span> ♡</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-text">
+        <div class="eyebrow">✦ INFORMATION TECHNOLOGY PORTFOLIO ✦</div>
+        <h1>Hello, I'm <span>Destya.</span></h1>
+        <p>
+          I am interested in information technology, particularly computer networking,
+          internet infrastructure, the Internet of Things (IoT), and the development
+          of internet-based services and applications. I continue to develop my
+          technical skills through various projects and collaborative experiences.
+          Through this portfolio, I showcase my projects, skills, and experiences as
+          part of my ongoing learning and professional development in the field of
+          information technology.
+        </p>
+        <div class="buttons">
+          <a class="button" href="#contact">Contact Me ♡</a>
+          <a class="button secondary" href="#projects">
+              View My Projects ✧
+            </a>
+          <a
+            class="button secondary"
+            href="file/CV_DESTYA.pdf"
+            download="CV-Destya.pdf"
+          >
+            ↓ Download CV
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <img
+          class="avatar"
+          src="images/foto-destya.jpeg"
+          alt="Foto Destya"
+          width="112" height="112"
+          loading="lazy"
+        />
+        <h3>Internet Engineering Student</h3>
+        <p>Universitas Gadjah Mada ✨</p>
+        <span class="tag pink">Destya Nikmatu Maula Saputri</span>
+      </div>
+    </section>
+
+    <section id="about">
+      <h2 class="section-title">About <span>Me</span> ♡</h2>
+      <div class="about">
+        <p>
+          I am interested in information technology, particularly computer networking,
+          internet infrastructure, the Internet of Things (IoT), and the development
+          of internet-based services and applications. I continue to develop my
+          technical skills through various projects and collaborative experiences.
+          Through this portfolio, I showcase my projects, skills, and experiences as
+          part of my ongoing learning and professional development in the field of
+          information technology.
+        </p>
+        <div class="tags">
+          <span class="tag">Network Engineering</span>
+          <span class="tag pink">Internet Infrastructure</span>
+          <span class="tag">IoT</span>
+          <span class="tag pink">Web Development</span>
+          <span class="tag">Cybersecurity</span>
+          <span class="tag">Computer Networking</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <h2 class="section-title">My <span>Skills</span> ✧</h2>
+      <p>Tools and technologies I have worked with.</p>
+
+      <div class="skills">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🌐</div>
+          <h3>Networking</h3>
+          <p>Network configuration, IP addressing, routing, and troubleshooting.</p>
+          <span class="tag">Cisco Packet Tracer</span>
+          <span class="tag">MikroTik</span>
+          <span class="tag">Winbox</span>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">💻</div>
+          <h3>Programming & Development</h3>
+          <p>Software development, web programming, application development, and version control.</p>
+          <span class="tag">Python</span>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">GitHub</span>
+          <span class="tag">Tkinter</span>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">📡</div>
+          <h3>IoT</h3>
+          <p>Connected devices and communication between IoT components.</p>
+          <span class="tag">ESP32</span>
+          <span class="tag">MQTT</span>
+          <span class="tag">HTTP</span>
+          <span class="tag">Arduino</span>
+          <span class="tag">ThingSpeak</span>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🛡️</div>
+          <h3>Cyber Security</h3>
+          <p>Network traffic analysis, security monitoring, and web application security testing.</p>
+          <span class="tag">Wireshark</span>
+          <span class="tag">Burp Suite</span>
+          <span class="tag">Nmap</span>
+          <span class="tag">Snort</span>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🖥️</div>
+          <h3>Systems &amp; Servers</h3>
+          <p>Linux command-line basics and web server configuration.</p>
+          <span class="tag">Ubuntu</span>
+          <span class="tag">Linux</span>
+          <span class="tag">Apache</span>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🎨</div>
+          <h3>Design</h3>
+          <p>Creating visual content and designing user interfaces.</p>
+          <span class="tag">Canva</span>
+          <span class="tag">Figma</span>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 class="section-title">Featured <span>Projects</span> ♡</h2>
+      <p>Some of my projects and practical work.</p>
+
+      <div class="projects">
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">📊</div>
+          <h3>Dashboard Monitoring IoT Penampung Air RSA UGM</h3>
+          <p>Merancang tampilan dashboard monitoring IoT untuk memantau volume air dan status pompa pada penampung air di RSA UGM. Dashboard dirancang untuk memudahkan pemantauan kondisi tangki melalui visualisasi data secara informatif.</p>
+          <strong>Teknologi:</strong>
+          <ul>
+            <li>Figma</li>
+            <li>UI/UX Design</li>
+            <li>Data Visualization</li>
+          </ul>
+          <strong>Kontribusi:</strong>
+          <ul>
+            <li>Merancang tampilan dan tata letak dashboard.</li>
+            <li>Membuat visualisasi volume air dan status pompa.</li>
+            <li>Mendesain komponen grafik, tabel, dan riwayat aktivitas.</li>
+          </ul>
+          <strong>Dokumentasi Proyek:</strong>
+
+          <div class="project-gallery">
+              <img src="images/dashboard-rsa.png"
+                  alt="Dashboard Monitoring RSA UGM"
+                  class="project-image">
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🏨</div>
+          <h3>Smart Hotel Berbasis IoT</h3>
+          <p>Mengembangkan sistem pemesanan dan akses hotel mandiri berbasis IoT dengan konsep self-service. Sistem mengintegrasikan website, server, dan perangkat IoT untuk mendukung proses reservasi serta akses kamar secara otomatis.</p>
+          <strong>Teknologi:</strong>
+          <ul>
+            <li>Python</li>
+            <li>ESP32</li>
+            <li>HTTP</li>
+            <li>MQTT</li>
+            <li>PostgreSQL</li>
+            <li>Nginx</li>
+          </ul>
+          <strong>Kontribusi:</strong>
+          <ul>
+            <li>Merancang alur sistem pemesanan dan akses hotel.</li>
+            <li>Mengembangkan integrasi website dengan server dan database.</li>
+            <li>Mengintegrasikan ESP32 untuk mendukung sistem akses otomatis.</li>
+          </ul>
+          <strong>Dokumentasi Proyek:</strong>
+          <div class="project-gallery">
+              <img src="images/iot-smart-hotel-orang.jpeg"
+                  alt="IoT"
+                  class="project-image">
+          </div>
+          <div class="project-gallery">
+              <img src="images/dashboard-cekin.png"
+                  alt="Dashboard Cekin+"
+                  class="project-image">
+          </div>
+          <div class="project-gallery">
+              <img src="images/iot-smart-hotel.jpeg"
+                  alt="Dashboard Cekin+"
+                  class="project-image">
+          </div>
+
+          <strong>File Pendukung:</strong>
+          <ul>
+              <li>
+                  <a href="file/app-cekin.py"
+                    target="_blank"
+                    rel="noopener">
+                    Lihat File
+                  </a>
+              </li>
+              </li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">💡</div>
+          <h3>Smart Lamp Berbasis ESP32</h3>
+          <p>Mengembangkan sistem lampu otomatis menggunakan ESP32 dan sensor gerak untuk mengontrol kondisi lampu. Sistem memanfaatkan komunikasi MQTT agar perangkat dapat bertukar data dan menerima perintah secara otomatis.</p>
+          <strong>Teknologi:</strong>
+          <ul>
+            <li>ESP32</li>
+            <li>MQTT</li>
+            <li>Arduino IDE</li>
+            <li>Sensor Gerak</li>
+          </ul>
+          <strong>Kontribusi:</strong>
+          <ul>
+            <li>Merancang rangkaian dan program ESP32.</li>
+            <li>Mengintegrasikan sensor gerak untuk mendeteksi aktivitas.</li>
+            <li>Mengimplementasikan komunikasi MQTT antarperangkat.</li>
+          </ul>
+          <strong>Dokumentasi Proyek:</strong>
+          <div class="project-gallery">
+              <img src="images/dokum-smartlamp.jpeg"
+                  alt="IoT"
+                  class="project-image">
+          </div>
+          <div class="project-gallery">
+              <img src="images/iot-sisnam-dalam.jpeg"
+                  alt="Dashboard Cekin+"
+                  class="project-image">
+          </div>
+          <div class="project-gallery">
+              <img src="images/iot-sisnam-rumah.jpeg"
+                  alt="Dashboard Cekin+"
+                  class="project-image">
+          </div>
+          <strong>File Pendukung:</strong>
+          <ul>
+              <li>
+                  <a href="file/JISE_SISNAM_KELOMPOK1.pdf"
+                    target="_blank"
+                    rel="noopener">
+                    Lihat File
+                  </a>
+              </li>
+              </li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">📈</div>
+          <h3>Aplikasi Sistem Data Pemerataan Internet</h3>
+          <p>Merancang konsep aplikasi untuk membantu pengelolaan dan pemantauan data pemerataan akses internet. Proyek ini bertujuan mendukung pengolahan informasi dan pemantauan distribusi akses internet melalui sistem yang terstruktur.</p>
+          <strong>Teknologi / Tools:</strong>
+          <ul>
+            <li>System Analysis</li>
+            <li>Project Management</li>
+            <li>Application Design</li>
+          </ul>
+          <strong>Kontribusi:</strong>
+          <ul>
+            <li>Merancang konsep dan kebutuhan aplikasi.</li>
+            <li>Mengoordinasikan pembagian tugas anggota tim.</li>
+            <li>Memantau perkembangan dan memastikan proyek berjalan sesuai rencana.</li>
+          </ul>
+          <strong>File Pendukung:</strong>
+          <ul>
+              <li>
+                  <a href="file/pemerataan-internet.py"
+                    target="_blank"
+                    rel="noopener">
+                    Lihat File
+                  </a>
+              </li>
+              </li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🖧</div>
+          <h3>Perancangan dan Konfigurasi Jaringan Cisco</h3>
+          <p>Merancang dan mengonfigurasi topologi jaringan menggunakan Cisco Packet Tracer. Proyek mencakup pengaturan IP Address, konfigurasi routing, serta pengujian konektivitas untuk memastikan komunikasi antarperangkat berjalan dengan baik.</p>
+          <strong>Teknologi:</strong>
+          <ul>
+            <li>Cisco Packet Tracer</li>
+            <li>IP Addressing</li>
+            <li>Routing RIP</li>
+            <li>Routing OSPF</li>
+          </ul>
+          <strong>Kontribusi:</strong>
+          <ul>
+            <li>Merancang topologi jaringan sesuai kebutuhan.</li>
+            <li>Melakukan konfigurasi IP Address dan routing.</li>
+            <li>Melakukan pengujian konektivitas serta troubleshooting jaringan.</li>
+          </ul>
+          <strong>Dokumentasi Proyek:</strong>
+          <div class="project-gallery">
+              <img src="images/topologi-jaringan.png"
+                  alt="IoT"
+                  class="project-image">
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-icon" aria-hidden="true">🐍</div>
+          <h3>Program Pendaftaran Online Janji Temu Dokter</h3>
+          <p>Mengembangkan program pendaftaran janji temu dokter berbasis Python untuk membantu proses pendaftaran dan pengelolaan jadwal konsultasi pasien. Program dirancang untuk mempermudah pengaturan data pendaftaran secara lebih terstruktur.</p>
+          <strong>Teknologi:</strong>
+          <ul>
+            <li>Python</li>
+          </ul>
+          <strong>Kontribusi:</strong>
+          <ul>
+            <li>Merancang alur program pendaftaran pasien.</li>
+            <li>Mengembangkan fitur pengelolaan jadwal konsultasi.</li>
+            <li>Mengimplementasikan fungsi program sesuai kebutuhan sistem.</li>
+          </ul>
+          <strong>File Pendukung:</strong>
+          <ul>
+              <li>
+                  <a href="file/Project-janjitemu.py"
+                    target="_blank"
+                    rel="noopener">
+                    Lihat File
+                  </a>
+              </li>
+              </li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact">
+        <h2 class="section-title">Let’s <span>Connect!</span> 🎀</h2>
+        <p>
+          Feel free to contact me for projects, collaboration,
+          or professional opportunities.
+        </p>
+        <div class="buttons">
+          <a
+            class="button"
+            href="https://wa.me/6282233362175"
+            target="_blank"
+            rel="noopener noreferrer"
+          >WhatsApp</a>
+          <a class="button secondary" href="mailto:destyanikmatumaulasputri@mail.ugm.ac.id">
+            Email Me (UGM)
+          </a>
+          <a class="button secondary" href="mailto:destiaputri200010@gmail.com">
+            Email Me (Gmail)
+          </a>
+          <a
+            class="button secondary"
+            href="https://www.linkedin.com/in/destya-nms-linkedin/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >LinkedIn</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 Destya Nikmatu · IT Portfolio
+  </footer>
+</body>
+</html>
